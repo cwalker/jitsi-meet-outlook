@@ -138,6 +138,8 @@ namespace JitsiMeetOutlook
             endSel.InsertAfter("\n");
             endSel.MoveDown(Word.WdUnits.wdLine);
 			//ExtLink
+			endSel.InsertAfter("\n");
+            endSel.MoveDown(Word.WdUnits.wdLine);
             endSel.EndKey(Word.WdUnits.wdLine);
             var hyperLinkExt = wordDocument.Hyperlinks.Add(endSel.Range, extlink, ref missing, ref missing, extlink, ref missing);
             hyperLinkExt.Range.Font.Size = 10;

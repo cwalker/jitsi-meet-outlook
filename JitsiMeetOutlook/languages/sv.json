@@ -2,6 +2,7 @@
   "appointmentItem": {
     "textBodyDisclaimer": "\n\r",
     "textBodyMessage": "Gå med i mötet",
+    "textBodyMessageExt": "Join the meeting for external users",
     "textBodyMessagePhone": "Slå in nummer:\n",
     "textBodyPin": "\nKonferensnummer (PIN):",
     "textBodySupport": "Hur ansluter jag till mötet?"

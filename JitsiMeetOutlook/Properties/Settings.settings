@@ -5,6 +5,9 @@
     <Setting Name="Domain" Type="System.String" Scope="User">
       <Value Profile="(Default)">meet.jit.si</Value>
     </Setting>
+    <Setting Name="ExtDomain" Type="System.String" Scope="User">
+      <Value Profile="(Default)">meet.jit.si</Value>
+    </Setting>	
     <Setting Name="requireDisplayName" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>

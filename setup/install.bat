@@ -34,6 +34,6 @@ IF EXIST %target% (
     ECHO No previous installation found.
 )
 ECHO Plugin installation...
-msiexec /i "%origin%" TARGETDIR="%target%" DOMAIN="%DOMAIN%" ROOMID="%roomid%" REQNAME="%reqname%" NOAUDIO="%noaudio%" NOVIDEO="%novideo%" LANG="%lang%" DISABLE_CUSTOM_ROOM_ID="%disable_custom_room_id%" ENABLE_PHONE_NUMBERS="%enable_phone_numbers%" SERVICE_NAME="%service_name%" SUPPORT_URL="%support_url%" /passive
+msiexec /i "%origin%" TARGETDIR="%target%" DOMAIN="%DOMAIN%" EXT_DOMAIN="%EXT_DOMAIN%" ROOMID="%roomid%" REQNAME="%reqname%" NOAUDIO="%noaudio%" NOVIDEO="%novideo%" LANG="%lang%" DISABLE_CUSTOM_ROOM_ID="%disable_custom_room_id%" ENABLE_PHONE_NUMBERS="%enable_phone_numbers%" SERVICE_NAME="%service_name%" SUPPORT_URL="%support_url%" /passive
 ECHO Done.
 PAUSE

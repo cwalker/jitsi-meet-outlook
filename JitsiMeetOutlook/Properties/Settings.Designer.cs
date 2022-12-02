@@ -34,6 +34,18 @@ namespace JitsiMeetOutlook.Properties {
                 this["Domain"] = value;
             }
         }
+		
+		[global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("meet.jit.si")]
+        public string ExtDomain {
+            get {
+                return ((string)(this["ExtDomain"]));
+            }
+            set {
+                this["ExtDomain"] = value;
+            }
+        }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

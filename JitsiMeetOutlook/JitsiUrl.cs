@@ -36,12 +36,25 @@ namespace JitsiMeetOutlook
             string urlBase = "https://" + getDomain() + "/";
             return urlBase;
         }
+		
+		public static string getExtUrlBase()
+        {
+            string exturlBase = "https://" + getExtDomain() + "/";
+            return exturlBase;
+        }
 
         public static string getDomain()
         {
             Properties.Settings.Default.Reload();
             string domain = Properties.Settings.Default.Domain;
             return domain;
+        }
+		
+		public static string getExtDomain()
+        {
+            Properties.Settings.Default.Reload();
+            string extdomain = Properties.Settings.Default.ExtDomain;
+            return extdomain;
         }
 
         private static string randomListElement(JsonElement list)

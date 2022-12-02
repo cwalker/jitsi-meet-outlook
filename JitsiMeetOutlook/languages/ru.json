@@ -4,7 +4,8 @@
   },
 
   "appointmentItem": {
-    "textBodyMessage": "Джитси-Встреча nПрисоединяйтесь к конференции",
+    "textBodyMessage": "Джитси-Встреча. Присоединяйтесь к конференции",
+    "textBodyMessageExt": "Присоединяйтесь к конференции для внешних пользователей",
     "textBodyMessagePhone": "\n\rНомер телефона: ",
     "textBodyPin": "\r\nномер конференции: ",
     "textBodyDisclaimer": "\n\r",

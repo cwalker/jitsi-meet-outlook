@@ -50,6 +50,12 @@ namespace SettingsInstallerParameters
                 session.Log($"Setting custom domain: {getDomain(session)}");
                 navigator.SelectSingleNode(@"/configuration/userSettings/JitsiMeetOutlook.Properties.Settings/setting[@name='Domain']/value").SetValue(getDomain(session));
             }
+			
+			if (getExtDomain(session).Length != 0)
+            {
+                session.Log($"Setting custom domain: {getExtDomain(session)}");
+                navigator.SelectSingleNode(@"/configuration/userSettings/JitsiMeetOutlook.Properties.Settings/setting[@name='ExtDomain']/value").SetValue(getExtDomain(session));
+            }
 
             if (getRoomID(session).Length != 0)
             {
@@ -127,6 +133,11 @@ namespace SettingsInstallerParameters
         private static string getDomain(Session session)
         {
             return session.CustomActionData["Domain"];
+        }
+		
+		private static string getExtDomain(Session session)
+        {
+            return session.CustomActionData["ExtDomain"];
         }
 
         private static string getRoomID(Session session)

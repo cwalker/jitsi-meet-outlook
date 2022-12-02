@@ -5,6 +5,7 @@
 
   "appointmentItem": {
     "textBodyMessage": "Jitsi-Meeting Rejoignez la conférence",
+    "textBodyMessageExt": "Join the meeting for external users",
     "textBodyMessagePhone": "\n\rNuméro de téléphone : ",
     "textBodyPin": "\r\nNuméro de conférence: ",
     "textBodyDisclaimer": "\n\r",

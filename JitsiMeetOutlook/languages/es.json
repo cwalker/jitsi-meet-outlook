@@ -5,6 +5,7 @@
 
   "appointmentItem": {
     "textBodyMessage": "Únete a la reunión",
+    "textBodyMessageExt": "Join the meeting for external users",
     "textBodySupport": "How do I join the meeting?"
   },
 

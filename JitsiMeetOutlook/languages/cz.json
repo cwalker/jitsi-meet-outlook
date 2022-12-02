@@ -5,6 +5,7 @@
 
   "appointmentItem": {
     "textBodyMessage": "Připojte se ke schůzce",
+    "textBodyMessageExt": "Join the meeting for external users",
     "textBodySupport": "How do I join the meeting?"
   },
 

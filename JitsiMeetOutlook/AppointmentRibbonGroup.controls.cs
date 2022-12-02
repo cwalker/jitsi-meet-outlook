@@ -114,6 +114,7 @@ namespace JitsiMeetOutlook
             object missing = System.Reflection.Missing.Value;
 
             var link = JitsiUrl.getUrlBase() + roomId;
+            var extlink = JitsiUrl.getExtUrlBase() + roomId;
             endSel.InsertAfter("\n");
             endSel.MoveDown(Word.WdUnits.wdLine);
             endSel.InsertAfter("\n");
@@ -136,6 +137,16 @@ namespace JitsiMeetOutlook
             endSel.EndKey(Word.WdUnits.wdLine);
             endSel.InsertAfter("\n");
             endSel.MoveDown(Word.WdUnits.wdLine);
+			//ExtLink
+            endSel.EndKey(Word.WdUnits.wdLine);
+            var hyperLinkExt = wordDocument.Hyperlinks.Add(endSel.Range, extlink, ref missing, ref missing, extlink, ref missing);
+            hyperLinkExt.Range.Font.Size = 10;
+            hyperLinkExt.Application.Options.CtrlClickHyperlinkToOpen = false;
+            hyperLinkExt.TextToDisplay = Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodyMessageExt");
+
+            endSel.EndKey(Word.WdUnits.wdLine);
+            endSel.InsertAfter("\n");
+            endSel.MoveDown(Word.WdUnits.wdLine);			
 
             var phoneNumbers = await phoneNumbersTask;
 

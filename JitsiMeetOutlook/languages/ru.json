@@ -19,6 +19,7 @@
     "buttonRequireDisplayName": "Указание имени",
     "buttonStartWithAudioMuted": "Начать без звука",
     "buttonStartWithVideoMuted": "Начать без видео",
+	"buttonExtUrl": "Пригласить гостя",
     "buttonNewJitsiMeeting": "Новая конференция"
   },
 

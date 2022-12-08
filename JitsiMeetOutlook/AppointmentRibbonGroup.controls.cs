@@ -70,7 +70,10 @@ namespace JitsiMeetOutlook
                 {
                     buttonStartWithVideoMuted.Checked = true;
                 }
-
+                if (Utils.SettingIsActive(url, "ExtUrl"))
+                {
+                    buttonExtUrl.Checked = true;
+                }
             }
             else
             {
@@ -85,6 +88,11 @@ namespace JitsiMeetOutlook
                 {
                     toggleVideoOnStart();
                     buttonStartWithVideoMuted.Checked = true;
+                }
+		        if (Properties.Settings.Default.ExtUrl)
+                {
+                    toggleExtUrl();
+                    buttonExtUrl.Checked = true;
                 }
             }
 
@@ -290,6 +298,11 @@ namespace JitsiMeetOutlook
         {
             toggleSetting("startWithVideoMuted");
         }
+		
+        public void toggleExtUrl()
+        {
+            toggleSetting("ExtUrl");
+        }		
 
         public void toggleRequireName()
         {

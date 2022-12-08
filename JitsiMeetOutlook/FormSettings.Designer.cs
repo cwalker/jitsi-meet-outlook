@@ -61,6 +61,10 @@
             this.comboBoxRandomGeneratorMode = new System.Windows.Forms.ComboBox();
             this.tabPageMeetingOptions = new System.Windows.Forms.TabPage();
             this.tabPageLanguage = new System.Windows.Forms.TabPage();
+            this.panelExtUrl = new System.Windows.Forms.Panel();
+            this.radioButtonExtUrlToggled = new System.Windows.Forms.RadioButton();
+            this.radioButtonExtUrlUntoggled = new System.Windows.Forms.RadioButton();
+            this.labelExtUrl = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBoxDomain.SuspendLayout();
             this.groupBoxToggleDefaults.SuspendLayout();
@@ -74,6 +78,7 @@
             this.groupBoxRandomGeneratorMode.SuspendLayout();
             this.tabPageMeetingOptions.SuspendLayout();
             this.tabPageLanguage.SuspendLayout();
+            this.panelExtUrl.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -168,6 +173,7 @@
             // 
             // groupBoxToggleDefaults
             // 
+            this.groupBoxToggleDefaults.Controls.Add(this.panelExtUrl);
             this.groupBoxToggleDefaults.Controls.Add(this.panelStartWithVideoMuted);
             this.groupBoxToggleDefaults.Controls.Add(this.panelStartWithAudioMuted);
             this.groupBoxToggleDefaults.Controls.Add(this.labelToggled);
@@ -430,6 +436,50 @@
             this.tabPageLanguage.Text = "Language";
             this.tabPageLanguage.UseVisualStyleBackColor = true;
             // 
+            // panelExtUrl
+            // 
+            this.panelExtUrl.Controls.Add(this.radioButtonExtUrlToggled);
+            this.panelExtUrl.Controls.Add(this.radioButtonExtUrlUntoggled);
+            this.panelExtUrl.Controls.Add(this.labelExtUrl);
+            this.panelExtUrl.Location = new System.Drawing.Point(6, 82);
+            this.panelExtUrl.Name = "panelExtUrl";
+            this.panelExtUrl.Size = new System.Drawing.Size(287, 19);
+            this.panelExtUrl.TabIndex = 5;
+            // 
+            // radioButtonExtUrlToggled
+            // 
+            this.radioButtonExtUrlToggled.AutoSize = true;
+            this.radioButtonExtUrlToggled.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonExtUrlToggled.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.radioButtonExtUrlToggled.Location = new System.Drawing.Point(207, 3);
+            this.radioButtonExtUrlToggled.Name = "radioButtonExtUrlToggled";
+            this.radioButtonExtUrlToggled.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonExtUrlToggled.TabIndex = 2;
+            this.radioButtonExtUrlToggled.TabStop = true;
+            this.radioButtonExtUrlToggled.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonExtUrlToggled.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonExtUrlUntoggled
+            // 
+            this.radioButtonExtUrlUntoggled.AutoSize = true;
+            this.radioButtonExtUrlUntoggled.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.radioButtonExtUrlUntoggled.Location = new System.Drawing.Point(260, 3);
+            this.radioButtonExtUrlUntoggled.Name = "radioButtonExtUrlUntoggled";
+            this.radioButtonExtUrlUntoggled.Size = new System.Drawing.Size(14, 13);
+            this.radioButtonExtUrlUntoggled.TabIndex = 1;
+            this.radioButtonExtUrlUntoggled.TabStop = true;
+            this.radioButtonExtUrlUntoggled.UseVisualStyleBackColor = true;
+            // 
+            // labelExtUrl
+            // 
+            this.labelExtUrl.AutoSize = true;
+            this.labelExtUrl.Location = new System.Drawing.Point(3, 3);
+            this.labelExtUrl.Name = "labelExtUrl";
+            this.labelExtUrl.Size = new System.Drawing.Size(75, 13);
+            this.labelExtUrl.TabIndex = 0;
+            this.labelExtUrl.Text = "External Users";
+            this.labelExtUrl.Click += new System.EventHandler(this.label1_Click);
+            // 
             // FormSettings
             // 
             this.AcceptButton = this.buttonOK;
@@ -470,6 +520,8 @@
             this.groupBoxRandomGeneratorMode.ResumeLayout(false);
             this.tabPageMeetingOptions.ResumeLayout(false);
             this.tabPageLanguage.ResumeLayout(false);
+            this.panelExtUrl.ResumeLayout(false);
+            this.panelExtUrl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -510,5 +562,9 @@
         private System.Windows.Forms.TabPage tabPageLanguage;
         private System.Windows.Forms.GroupBox groupBoxRandomGeneratorMode;
         private System.Windows.Forms.ComboBox comboBoxRandomGeneratorMode;
+        private System.Windows.Forms.Panel panelExtUrl;
+        private System.Windows.Forms.RadioButton radioButtonExtUrlToggled;
+        private System.Windows.Forms.RadioButton radioButtonExtUrlUntoggled;
+        private System.Windows.Forms.Label labelExtUrl;
     }
 }

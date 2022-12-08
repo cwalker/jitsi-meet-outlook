@@ -72,6 +72,9 @@ namespace SettingsInstallerParameters
             session.Log($"Setting video muted option: {getStartWithVideoMuted(session)}");
             navigator.SelectSingleNode(@"/configuration/userSettings/JitsiMeetOutlook.Properties.Settings/setting[@name='startWithVideoMuted']/value").SetValue(getStartWithVideoMuted(session));
 
+            session.Log($"Setting external url option: {getExtUrl(session)}");
+            navigator.SelectSingleNode(@"/configuration/userSettings/JitsiMeetOutlook.Properties.Settings/setting[@name='ExtUrl']/value").SetValue(getExtUrl(session));
+
             session.Log($"Setting install directory: {getInstallDir(session)}");
             navigator.SelectSingleNode(@"/configuration/userSettings/JitsiMeetOutlook.Properties.Settings/setting[@name='installDirectory']/value").SetValue(getInstallDir(session));
 
@@ -188,6 +191,11 @@ namespace SettingsInstallerParameters
         private static string getStartWithVideoMuted(Session session)
         {
             return getBooleanParameter(session, "startWithVideoMuted");
+        }
+
+        private static string getExtUrl(Session session)
+        {
+            return getBooleanParameter(session, "ExtUrl");
         }
 
         private static string getDisableCustomRoomId(Session session)

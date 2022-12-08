@@ -82,6 +82,18 @@ namespace JitsiMeetOutlook.Properties {
                 this["startWithVideoMuted"] = value;
             }
         }
+		
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ExtUrl {
+            get {
+                return ((bool)(this["ExtUrl"]));
+            }
+            set {
+                this["ExtUrl"] = value;
+            }
+        }		
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

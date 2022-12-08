@@ -48,6 +48,11 @@ namespace JitsiMeetOutlook
         {
             toggleVideoOnStart();
         }
+		
+	    private void buttonExtUrl_Click(object sender, RibbonControlEventArgs e)
+        {
+			toggleExtUrl();
+        }
 
         private void buttonNewJitsiMeeting_Click(object sender, RibbonControlEventArgs e)
         {

@@ -46,6 +46,7 @@
             this.buttonStartWithVideoMuted = this.Factory.CreateRibbonToggleButton();
             this.groupNewMeeting = this.Factory.CreateRibbonGroup();
             this.buttonNewJitsiMeeting = this.Factory.CreateRibbonButton();
+            this.buttonExtUrl = this.Factory.CreateRibbonToggleButton();
             this.Appointment.SuspendLayout();
             this.groupJitsiMeetControls.SuspendLayout();
             this.box1.SuspendLayout();
@@ -70,6 +71,7 @@
             this.groupJitsiMeetControls.Items.Add(this.box1);
             this.groupJitsiMeetControls.Items.Add(this.box2);
             this.groupJitsiMeetControls.Items.Add(this.box3);
+            this.groupJitsiMeetControls.Items.Add(this.buttonExtUrl);
             this.groupJitsiMeetControls.Label = "Jitsi Meet";
             this.groupJitsiMeetControls.Name = "groupJitsiMeetControls";
             this.groupJitsiMeetControls.Position = this.Factory.RibbonPosition.BeforeOfficeId("GroupAttendees");
@@ -144,6 +146,14 @@
             this.buttonNewJitsiMeeting.ShowImage = true;
             this.buttonNewJitsiMeeting.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonNewJitsiMeeting_Click);
             // 
+            // buttonExtUrl
+            // 
+            this.buttonExtUrl.Label = "External Users";
+            this.buttonExtUrl.Name = "buttonExtUrl";
+            this.buttonExtUrl.OfficeImageId = "ViewOnlineConnection";
+            this.buttonExtUrl.ShowImage = true;
+            this.buttonExtUrl.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonExtUrl_Click);
+            // 
             // AppointmentRibbonGroup
             // 
             this.Name = "AppointmentRibbonGroup";
@@ -178,6 +188,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonBox box3;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup groupNewMeeting;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton buttonNewJitsiMeeting;
+        internal Microsoft.Office.Tools.Ribbon.RibbonToggleButton buttonExtUrl;
     }
 
     partial class ThisRibbonCollection

@@ -1,13 +1,12 @@
-﻿using System.Linq;
-using Outlook = Microsoft.Office.Interop.Outlook;
-using Word = Microsoft.Office.Interop.Word;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Text;
-using JitsiMeetOutlook.Entities;
+﻿using JitsiMeetOutlook.Entities;
 using Microsoft.Office.Interop.Word;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Outlook = Microsoft.Office.Interop.Outlook;
 using Task = System.Threading.Tasks.Task;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace JitsiMeetOutlook
 {
@@ -15,7 +14,7 @@ namespace JitsiMeetOutlook
     {
         private Outlook.AppointmentItem appointmentItem;
         private string oldDomain;
-
+        private string roomId;
         private void initialise()
         {
             // Set language
@@ -89,18 +88,18 @@ namespace JitsiMeetOutlook
                     toggleVideoOnStart();
                     buttonStartWithVideoMuted.Checked = true;
                 }
-		        if (Properties.Settings.Default.ExtUrl)
-                {
-                    toggleExtUrl();
-                    buttonExtUrl.Checked = true;
-                }
+                //               if (Properties.Settings.Default.ExtUrl)
+                //                {
+                //                    toggleExtUrl();
+                //                    buttonExtUrl.Checked = true;
+                //                }
             }
 
         }
 
         public async System.Threading.Tasks.Task appendNewMeetingText()
         {
-            string roomId;
+
             if (Properties.Settings.Default.roomID.Length == 0)
             {
                 roomId = JitsiUrl.generateRandomId();
@@ -127,7 +126,7 @@ namespace JitsiMeetOutlook
             endSel.MoveDown(Word.WdUnits.wdLine);
             endSel.InsertAfter("\n");
             endSel.MoveDown(Word.WdUnits.wdLine);
-            endSel.InsertAfter(".........................................................................................................................................\n");
+            endSel.InsertAfter("________________________________________________________________________________\n");
             endSel.MoveDown(Word.WdUnits.wdLine);
             endSel.Font.Size = 16;
             if (!string.IsNullOrWhiteSpace(Properties.Settings.Default.serviceName))
@@ -143,20 +142,8 @@ namespace JitsiMeetOutlook
             hyperLink.TextToDisplay = Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodyMessage");
 
             endSel.EndKey(Word.WdUnits.wdLine);
-            endSel.InsertAfter("\n");
-            endSel.MoveDown(Word.WdUnits.wdLine);
-			//ExtLink
-			endSel.InsertAfter("\n");
-            endSel.MoveDown(Word.WdUnits.wdLine);
-            endSel.EndKey(Word.WdUnits.wdLine);
-            var hyperLinkExt = wordDocument.Hyperlinks.Add(endSel.Range, extlink, ref missing, ref missing, extlink, ref missing);
-            hyperLinkExt.Range.Font.Size = 10;
-            hyperLinkExt.Application.Options.CtrlClickHyperlinkToOpen = false;
-            hyperLinkExt.TextToDisplay = Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodyMessageExt");
-
-            endSel.EndKey(Word.WdUnits.wdLine);
-            endSel.InsertAfter("\n");
-            endSel.MoveDown(Word.WdUnits.wdLine);			
+            //           endSel.InsertAfter("\n");
+            //           endSel.MoveDown(Word.WdUnits.wdLine);			
 
             var phoneNumbers = await phoneNumbersTask;
 
@@ -188,18 +175,18 @@ namespace JitsiMeetOutlook
                 endSel.InsertAfter(Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodyPin") + pinNumber);
                 endSel.EndKey(Word.WdUnits.wdLine);
             }
-            endSel.InsertAfter("\n");
-            endSel.MoveDown(Word.WdUnits.wdLine);
+            //           endSel.InsertAfter("\n");
+            //           endSel.MoveDown(Word.WdUnits.wdLine);
 
             if (!string.IsNullOrWhiteSpace(Properties.Settings.Default.supportUrl))
             {
                 wordDocument.Hyperlinks.Add(endSel.Range, Properties.Settings.Default.supportUrl, ref missing, ref missing, Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodySupport"), ref missing);
-                //endSel.InsertAfter();
+                endSel.InsertAfter("\n");
                 endSel.MoveDown(Word.WdUnits.wdLine);
             }
 
-            endSel.InsertAfter("\n");
-            endSel.MoveDown(Word.WdUnits.wdLine);
+            //           endSel.InsertAfter("\n");
+            //           endSel.MoveDown(Word.WdUnits.wdLine);
 
             IEnumerable<KeyValuePair<bool, string>> disclaimer = Utils.SplitToTextAndHyperlinks(Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodyDisclaimer"));
             foreach (var textblock in disclaimer)
@@ -218,8 +205,8 @@ namespace JitsiMeetOutlook
                 }
             }
             endSel.EndKey(Word.WdUnits.wdLine);
-            endSel.InsertAfter("\n");
-            endSel.MoveDown(Word.WdUnits.wdLine);
+            //            endSel.InsertAfter("\n");
+            //            endSel.MoveDown(Word.WdUnits.wdLine);
 
             wordDocument.Select();
             endSel.Collapse(Word.WdCollapseDirection.wdCollapseStart);
@@ -298,11 +285,11 @@ namespace JitsiMeetOutlook
         {
             toggleSetting("startWithVideoMuted");
         }
-		
+
         public void toggleExtUrl()
         {
             toggleSetting("ExtUrl");
-        }		
+        }
 
         public void toggleRequireName()
         {
@@ -347,8 +334,15 @@ namespace JitsiMeetOutlook
                         }
                     }
                     hyperlink.Address = fixUrl(urlNew);
+                    hyperlink.Range.Font.Color = get_Word_Color_RGB(0, 112, 192);
                 }
             }
+        }
+
+        private Word.WdColor get_Word_Color_RGB(int red, int green, int blue)
+        {
+            Color sysColor = Color.FromArgb(0, red, green, blue);
+            return (Word.WdColor)(sysColor.R + 0x100 * sysColor.G + 0x10000 * sysColor.B);
         }
 
         private string fixUrl(string url)

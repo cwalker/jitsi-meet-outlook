@@ -1,9 +1,9 @@
 using System;
-using System.Windows.Forms;
-using System.Text.RegularExpressions;
-using MessageBox = System.Windows.Forms.MessageBox;
 using System.Linq;
 using System.Text.Json;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace JitsiMeetOutlook
 {
@@ -24,7 +24,7 @@ namespace JitsiMeetOutlook
             loadRoomIDButtons();
             loadStartWithAudioMutedButtons();
             loadStartWithVideoMutedButtons();
-			loadExtUrlButtons();
+            //			loadExtUrlButtons();
 
             // Load text field
             textBoxDomain.Text = Properties.Settings.Default.Domain;
@@ -120,10 +120,10 @@ namespace JitsiMeetOutlook
                 {
                     Properties.Settings.Default.Domain = newDomain;
                 }
-//                else
-//                {
-//                    throw new InvalidOperationException("The domain entered is not valid.\n\nPlease specify a domain in the format 'your.domain.tld', 'yourdomain.tld' or similar.");
-//                }
+                //                else
+                //                {
+                //                    throw new InvalidOperationException("The domain entered is not valid.\n\nPlease specify a domain in the format 'your.domain.tld', 'yourdomain.tld' or similar.");
+                //                }
             }
 
             // Set room ID
@@ -159,14 +159,6 @@ namespace JitsiMeetOutlook
                 Properties.Settings.Default.startWithVideoMuted = false;
             }
 
-            if (radioButtonExtUrlToggled.Checked)
-            {
-                Properties.Settings.Default.ExtUrl = true;
-            }
-            else
-            {
-                Properties.Settings.Default.ExtUrl = false;
-            }
             // Set language
             string languageSelection = (string)comboBoxLanguage.SelectedItem;
             Properties.Settings.Default.language = languageDropDown.FirstOrDefault(x => x.Value == languageSelection).Key;
@@ -255,19 +247,19 @@ namespace JitsiMeetOutlook
                 radioButtonStartWithVideoMutedUntoggled.Checked = true;
             }
         }
-        private void loadExtUrlButtons()
-        {
-            if (Properties.Settings.Default.ExtUrl)
-            {
-                radioButtonExtUrlToggled.Checked = true;
-                radioButtonExtUrlUntoggled.Checked = false;
-            }
-            else
-            {
-                radioButtonExtUrlToggled.Checked = false;
-                radioButtonExtUrlUntoggled.Checked = true;
-            }
-        }		
+        //        private void loadExtUrlButtons()
+        //        {
+        //           if (Properties.Settings.Default.ExtUrl)
+        //           {
+        //                radioButtonExtUrlToggled.Checked = true;
+        //               radioButtonExtUrlUntoggled.Checked = false;
+        //           }
+        //           else
+        //           {
+        //               radioButtonExtUrlToggled.Checked = false;
+        //               radioButtonExtUrlUntoggled.Checked = true;
+        //           }
+        //       }		
 
         private void loadComboBoxLanguage()
         {

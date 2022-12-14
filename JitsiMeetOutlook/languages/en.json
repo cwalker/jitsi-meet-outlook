@@ -19,7 +19,7 @@
     "buttonRequireDisplayName": "Require Name",
     "buttonStartWithAudioMuted": "Mute on Start",
     "buttonStartWithVideoMuted": "No Video on Start",
-	"buttonExtUrl": "External Users"
+	  "buttonExtUrl": "External Users"
     "buttonNewJitsiMeeting": "New Meeting"
   },
 

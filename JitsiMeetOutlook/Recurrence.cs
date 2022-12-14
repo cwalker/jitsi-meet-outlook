@@ -1,11 +1,7 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Outlook;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Microsoft.Office.Interop.Outlook;
-using System.Windows.Forms;
 /**
  * Copied from https://github.com/phw198/OutlookGoogleCalendarSync/blob/master/src/OutlookGoogleCalendarSync/Recurrence.cs
  * Please retain the Copyright notice: MPL-2

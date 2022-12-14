@@ -26,7 +26,6 @@ namespace JitsiMeetOutlook
             this.labelUntoggled.Text = Globals.ThisAddIn.getElementTranslation("settings", "labelUntoggled");
             this.labelStartWithAudioMuted.Text = Globals.ThisAddIn.getElementTranslation("settings", "labelStartWithAudioMuted");
             this.labelStartWithVideoMuted.Text = Globals.ThisAddIn.getElementTranslation("settings", "labelStartWithVideoMuted");
-			this.labelExtUrl.Text = Globals.ThisAddIn.getElementTranslation("settings", "labelExtUrl");
             this.groupBoxLanguage.Text = Globals.ThisAddIn.getElementTranslation("settings", "groupBoxLanguage");
 
         }

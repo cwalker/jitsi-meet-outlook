@@ -1,5 +1,6 @@
-﻿using Microsoft.Office.Tools.Ribbon;
-using System.Threading.Tasks;
+﻿using Microsoft.Office.Interop.Word;
+using Microsoft.Office.Tools.Ribbon;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace JitsiMeetOutlook
 {
@@ -48,11 +49,39 @@ namespace JitsiMeetOutlook
         {
             toggleVideoOnStart();
         }
-		
-	    private void buttonExtUrl_Click(object sender, RibbonControlEventArgs e)
+
+        private void buttonExtUrl_CheckedChanged(object sender, RibbonControlEventArgs e)
         {
-			toggleExtUrl();
+            if (buttonExtUrl.Checked)
+            {
+                Document wordDocument = appointmentItem.GetInspector.WordEditor as Document;
+                wordDocument.Select();
+                var endSel = wordDocument.Application.Selection;
+                object missing = System.Reflection.Missing.Value;
+                var extlink = JitsiUrl.getExtUrlBase() + roomId;
+                endSel.InsertAfter("\n");
+                endSel.MoveDown(Word.WdUnits.wdLine);
+                endSel.EndKey(Word.WdUnits.wdLine);
+                var hyperLinkExt = wordDocument.Hyperlinks.Add(endSel.Range, extlink, ref missing, ref missing, extlink, ref missing);
+                hyperLinkExt.Range.Font.Size = 10;
+                hyperLinkExt.Application.Options.CtrlClickHyperlinkToOpen = false;
+                hyperLinkExt.TextToDisplay = Globals.ThisAddIn.getElementTranslation("appointmentItem", "textBodyMessageExt");
+                endSel.EndKey(Word.WdUnits.wdLine);
+                endSel.MoveDown(Word.WdUnits.wdLine);
+            }
+            else
+            {
+                Document wordDocument = appointmentItem.GetInspector.WordEditor as Document;
+                wordDocument.Select();
+                var endSel = wordDocument.Application.Selection;
+                endSel.MoveDown(Word.WdUnits.wdLine, 1);
+                endSel.Expand(Word.WdUnits.wdLine);
+                endSel.Delete();
+                endSel.EndKey(Word.WdUnits.wdLine);
+
+            }
         }
+
 
         private void buttonNewJitsiMeeting_Click(object sender, RibbonControlEventArgs e)
         {

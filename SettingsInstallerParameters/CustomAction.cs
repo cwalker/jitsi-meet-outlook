@@ -1,8 +1,8 @@
+using Microsoft.Deployment.WindowsInstaller;
 using System;
 using System.IO;
 using System.Linq;
 using System.Xml;
-using Microsoft.Deployment.WindowsInstaller;
 
 namespace SettingsInstallerParameters
 {
@@ -50,8 +50,8 @@ namespace SettingsInstallerParameters
                 session.Log($"Setting custom domain: {getDomain(session)}");
                 navigator.SelectSingleNode(@"/configuration/userSettings/JitsiMeetOutlook.Properties.Settings/setting[@name='Domain']/value").SetValue(getDomain(session));
             }
-			
-			if (getExtDomain(session).Length != 0)
+
+            if (getExtDomain(session).Length != 0)
             {
                 session.Log($"Setting custom domain: {getExtDomain(session)}");
                 navigator.SelectSingleNode(@"/configuration/userSettings/JitsiMeetOutlook.Properties.Settings/setting[@name='ExtDomain']/value").SetValue(getExtDomain(session));
@@ -137,8 +137,8 @@ namespace SettingsInstallerParameters
         {
             return session.CustomActionData["Domain"];
         }
-		
-		private static string getExtDomain(Session session)
+
+        private static string getExtDomain(Session session)
         {
             return session.CustomActionData["ExtDomain"];
         }

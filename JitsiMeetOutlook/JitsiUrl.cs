@@ -2,12 +2,11 @@
 // Based on: https://github.com/edenemmanuel/jitsiurl/blob/master/jitsiurl
 // and on: https://github.com/jitsi/js-utils/blob/master/random/roomNameGenerator.js
 
+using Diacritics.Extensions;
 using System;
 using System.Security.Cryptography;
 using System.Text;
-
 using System.Text.Json;
-using Diacritics.Extensions;
 using System.Text.RegularExpressions;
 
 namespace JitsiMeetOutlook
@@ -36,8 +35,8 @@ namespace JitsiMeetOutlook
             string urlBase = "https://" + getDomain() + "/";
             return urlBase;
         }
-		
-		public static string getExtUrlBase()
+
+        public static string getExtUrlBase()
         {
             string exturlBase = "https://" + getExtDomain() + "/";
             return exturlBase;
@@ -49,8 +48,8 @@ namespace JitsiMeetOutlook
             string domain = Properties.Settings.Default.Domain;
             return domain;
         }
-		
-		public static string getExtDomain()
+
+        public static string getExtDomain()
         {
             Properties.Settings.Default.Reload();
             string extdomain = Properties.Settings.Default.ExtDomain;

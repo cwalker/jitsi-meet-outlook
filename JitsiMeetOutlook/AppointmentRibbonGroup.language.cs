@@ -1,6 +1,4 @@
-﻿using System.Text.Json;
-
-namespace JitsiMeetOutlook
+﻿namespace JitsiMeetOutlook
 {
     public partial class AppointmentRibbonGroup
     {
@@ -12,7 +10,7 @@ namespace JitsiMeetOutlook
             this.buttonRandomRoomID.Label = Globals.ThisAddIn.getElementTranslation("appointmentRibbonGroup", "buttonRandomRoomID");
             this.buttonStartWithAudioMuted.Label = Globals.ThisAddIn.getElementTranslation("appointmentRibbonGroup", "buttonStartWithAudioMuted");
             this.buttonStartWithVideoMuted.Label = Globals.ThisAddIn.getElementTranslation("appointmentRibbonGroup", "buttonStartWithVideoMuted");
-			this.buttonExtUrl.Label = Globals.ThisAddIn.getElementTranslation("appointmentRibbonGroup", "buttonExtUrl");
+            this.buttonExtUrl.Label = Globals.ThisAddIn.getElementTranslation("appointmentRibbonGroup", "buttonExtUrl");
             this.buttonNewJitsiMeeting.Label = Globals.ThisAddIn.getElementTranslation("appointmentRibbonGroup", "buttonNewJitsiMeeting");
 
         }

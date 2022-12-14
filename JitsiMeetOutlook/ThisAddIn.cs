@@ -2,8 +2,6 @@
 using Microsoft.Office.Interop.Outlook;
 using System;
 using System.IO;
-using System.Threading;
-using System.Windows.Forms;
 using Outlook = Microsoft.Office.Interop.Outlook;
 
 namespace JitsiMeetOutlook

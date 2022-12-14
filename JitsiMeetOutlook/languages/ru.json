@@ -4,8 +4,8 @@
   },
 
   "appointmentItem": {
-    "textBodyMessage": "Джитси-Встреча. Присоединяйтесь к конференции",
-    "textBodyMessageExt": "Присоединяйтесь к конференции для внешних пользователей",
+    "textBodyMessage": "Присоединиться к конференции",
+    "textBodyMessageExt": "Присоединиться к конференции (для гостей)",
     "textBodyMessagePhone": "\n\rНомер телефона: ",
     "textBodyPin": "\r\nномер конференции: ",
     "textBodyDisclaimer": "\n\r",
@@ -19,7 +19,7 @@
     "buttonRequireDisplayName": "Указание имени",
     "buttonStartWithAudioMuted": "Начать без звука",
     "buttonStartWithVideoMuted": "Начать без видео",
-	"buttonExtUrl": "Пригласить гостя",
+	  "buttonExtUrl": "Пригласить гостя",
     "buttonNewJitsiMeeting": "Новая конференция"
   },
 

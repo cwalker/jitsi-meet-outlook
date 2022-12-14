@@ -1,21 +1,16 @@
-using System;
-using Outlook = Microsoft.Office.Interop.Outlook;
-using MessageBox = System.Windows.Forms.MessageBox;
-using System.Security.Cryptography;
-using System.Text;
-using System.Numerics;
-using System.Net.Http;
-using System.Text.Json;
-using System.Collections.Generic;
 using JitsiMeetOutlook.Entities;
-using System.Threading.Tasks;
-using System.Linq;
-using System.Net;
-using System.Text.Json.Serialization;
-using System.Net.Http.Headers;
-using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Threading.Tasks;
+using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace JitsiMeetOutlook
 {
@@ -31,7 +26,8 @@ namespace JitsiMeetOutlook
         private RequestCache<string> PINCache = new RequestCache<string>();
         private RequestCache<PhoneNumberListResponse> PhoneNumbersCache = new RequestCache<PhoneNumberListResponse>();
 
-        public JitsiApiService() {
+        public JitsiApiService()
+        {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
         }
 

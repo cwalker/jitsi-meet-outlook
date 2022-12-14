@@ -44,9 +44,9 @@
             this.buttonStartWithAudioMuted = this.Factory.CreateRibbonToggleButton();
             this.box3 = this.Factory.CreateRibbonBox();
             this.buttonStartWithVideoMuted = this.Factory.CreateRibbonToggleButton();
+            this.buttonExtUrl = this.Factory.CreateRibbonToggleButton();
             this.groupNewMeeting = this.Factory.CreateRibbonGroup();
             this.buttonNewJitsiMeeting = this.Factory.CreateRibbonButton();
-            this.buttonExtUrl = this.Factory.CreateRibbonToggleButton();
             this.Appointment.SuspendLayout();
             this.groupJitsiMeetControls.SuspendLayout();
             this.box1.SuspendLayout();
@@ -129,6 +129,14 @@
             this.buttonStartWithVideoMuted.ShowImage = true;
             this.buttonStartWithVideoMuted.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonStartWithVideoMuted_Click);
             // 
+            // buttonExtUrl
+            // 
+            this.buttonExtUrl.Label = "External Users";
+            this.buttonExtUrl.Name = "buttonExtUrl";
+            this.buttonExtUrl.OfficeImageId = "ViewOnlineConnection";
+            this.buttonExtUrl.ShowImage = true;
+            this.buttonExtUrl.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonExtUrl_CheckedChanged);
+            // 
             // groupNewMeeting
             // 
             this.groupNewMeeting.Items.Add(this.buttonNewJitsiMeeting);
@@ -145,14 +153,6 @@
             this.buttonNewJitsiMeeting.Name = "buttonNewJitsiMeeting";
             this.buttonNewJitsiMeeting.ShowImage = true;
             this.buttonNewJitsiMeeting.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonNewJitsiMeeting_Click);
-            // 
-            // buttonExtUrl
-            // 
-            this.buttonExtUrl.Label = "External Users";
-            this.buttonExtUrl.Name = "buttonExtUrl";
-            this.buttonExtUrl.OfficeImageId = "ViewOnlineConnection";
-            this.buttonExtUrl.ShowImage = true;
-            this.buttonExtUrl.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.buttonExtUrl_Click);
             // 
             // AppointmentRibbonGroup
             // 

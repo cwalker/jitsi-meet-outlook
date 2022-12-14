@@ -7,7 +7,7 @@
     </Setting>
     <Setting Name="ExtDomain" Type="System.String" Scope="User">
       <Value Profile="(Default)">meet.jit.si</Value>
-    </Setting>	
+    </Setting>
     <Setting Name="requireDisplayName" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
@@ -52,6 +52,9 @@
     </Setting>
     <Setting Name="supportUrl" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://www.google.se/</Value>
+    </Setting>
+    <Setting Name="ExtUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

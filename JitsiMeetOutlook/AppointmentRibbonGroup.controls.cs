@@ -126,7 +126,18 @@ namespace JitsiMeetOutlook
             endSel.MoveDown(Word.WdUnits.wdLine);
             endSel.InsertAfter("\n");
             endSel.MoveDown(Word.WdUnits.wdLine);
-            endSel.InsertAfter("________________________________________________________________________________\n");
+            
+            // Horizontal line
+            object oMissing = System.Reflection.Missing.Value;
+
+            Microsoft.Office.Interop.Word.InlineShape line = wordDocument.Paragraphs.Last.Range.InlineShapes.AddHorizontalLineStandard(ref oMissing);
+            line.Height = 1;
+            line.Fill.Solid();
+            line.HorizontalLineFormat.NoShade = true;
+            line.Fill.ForeColor.RGB = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gray);
+            line.HorizontalLineFormat.PercentWidth = 100;
+            line.HorizontalLineFormat.Alignment = WdHorizontalLineAlignment.wdHorizontalLineAlignCenter;
+            //
             endSel.MoveDown(Word.WdUnits.wdLine);
             endSel.Font.Size = 16;
             if (!string.IsNullOrWhiteSpace(Properties.Settings.Default.serviceName))
@@ -184,6 +195,7 @@ namespace JitsiMeetOutlook
                 endSel.InsertAfter("\n");
                 endSel.MoveDown(Word.WdUnits.wdLine);
             }
+
 
             //           endSel.InsertAfter("\n");
             //           endSel.MoveDown(Word.WdUnits.wdLine);
